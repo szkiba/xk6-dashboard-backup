@@ -1,0 +1,63 @@
+# SPDX-FileCopyrightText: 2021 - 2023 Iván Szkiba
+#
+# SPDX-License-Identifier: MIT
+
+linters:
+  presets:
+    - bugs
+    - style
+    - unused
+    - complexity
+    - format
+    - performance
+  enable:
+    - exportloopref
+  disable:
+    - testpackage
+    - nolintlint
+    - gochecknoglobals
+    - gochecknoinits
+    - lll
+    - maligned
+    - interfacer
+    - scopelint
+    - wrapcheck
+# deprecated
+    - deadcode
+    - nosnakecase
+    - exhaustivestruct
+    - ifshort
+    - structcheck
+    - varcheck
+    - golint
+# generics
+    - rowserrcheck
+    - sqlclosecheck
+    - wastedassign
+
+linters-settings:
+  depguard:
+    rules:
+      main:
+        files:
+        - $all
+        - "!$test"
+        allow:
+          - $gostd
+          - github.com/sirupsen/logrus
+          - github.com/spf13/cobra
+          - github.com/pkg/browser
+          - github.com/gorilla/schema
+          - github.com/tidwall/gjson
+          - github.com/r3labs/sse/v2
+          - github.com/szkiba/xk6-dashboard/assets
+          - github.com/szkiba/xk6-dashboard/dashboard
+      test:
+        files:
+        - $test
+        allow:
+        - $gostd
+        - github.com/stretchr/testify/assert
+        - github.com/sirupsen/logrus
+        - github.com/szkiba/xk6-dashboard/assets
+        - github.com/szkiba/xk6-dashboard/dashboard

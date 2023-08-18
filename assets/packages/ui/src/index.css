@@ -1,0 +1,20 @@
+/*
+ * SPDX-FileCopyrightText: 2023 Iván Szkiba
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+body {
+  margin: 0;
+}
+
+@media screen {
+  body {
+    background-color: #f7f7f7;
+  }
+}
+
+.uplot {
+  margin-left: auto;
+  margin-right: auto;
+}
